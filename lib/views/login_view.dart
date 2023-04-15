@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:projectnew/views/dashboard/dashboard_view.dart';
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 241, 222, 201),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -37,7 +38,7 @@ class CardFromLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Card(
-        color: Color.fromARGB(255, 38, 200, 1),
+        color: Color.fromARGB(255, 164, 144, 124),
         elevation: 8,
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 150),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
@@ -67,9 +68,13 @@ class ButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (bc){
+            return DashboardView();
+          }));
+        },
         style: ElevatedButton.styleFrom(
-            backgroundColor: Color.fromARGB(255, 151, 185, 14),
+            backgroundColor: Color.fromARGB(255, 200, 182, 166),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),
         child: Padding(
@@ -90,9 +95,10 @@ class KolomInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
       child: TextField(
         decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             fillColor: Colors.white,
             contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            hintText: "Silahkan isi",
             isDense: true,
             filled: true),
       ),
