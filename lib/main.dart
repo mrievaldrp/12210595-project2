@@ -8,6 +8,7 @@ void main(List<String> args) {
       providers: [
         ChangeNotifierProvider(create: (bc) => DashboardProvider()),
         ChangeNotifierProvider(create: (bc) => BeritaPanelProvider()),
+        ChangeNotifierProvider(create: (bc) => BeritaLoadDataProvider()),
       ],
       builder: (context, Widget) {
         return MaterialApp(
